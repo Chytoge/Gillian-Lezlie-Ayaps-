@@ -40,3 +40,12 @@ for idx, p in enumerate(participants, 1):
 
         if not duplicates_found:
             print("\nNo duplicate names.")
+
+        summary = {}
+        for p in participants:
+            track = p['track']
+            summary[track] = summary.get(track, 0) + 1
+
+        print("\nParticipants per track:")
+        for track, count in summary.items():
+            print(f"{track}: {count}")
