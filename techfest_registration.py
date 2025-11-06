@@ -8,3 +8,15 @@ if num_participants <= 0:
 else:
     # Move on to the next task later
     pass
+
+participants = []
+
+for i in range(num_participants):
+    name = input("Enter participant name: ")
+    track = input("Enter chosen track: ")
+    participant = {"name": name, "track": track}
+    participants.append(participant)
+
+print("\nRegistered Participants:")
+for idx, p in enumerate(participants, 1):
+    print(f"{idx}. {p['name']} - {p['track']}")
