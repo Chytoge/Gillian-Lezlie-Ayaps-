@@ -27,3 +27,16 @@ for idx, p in enumerate(participants, 1):
         print("\nNot enough variety in tracks.")
     else:
         print("\nTracks offered in this event: " + ", ".join(unique_tracks))
+
+        seen_names = set()
+        duplicates_found = False
+
+        for p in participants:
+            if p['name'] in seen_names:
+                print(f"\nDuplicate name found: {p['name']}")
+                duplicates_found = True
+                break
+            seen_names.add(p['name'])
+
+        if not duplicates_found:
+            print("\nNo duplicate names.")
